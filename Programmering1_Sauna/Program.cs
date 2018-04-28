@@ -9,9 +9,8 @@ namespace Programmering1_Sauna {
         static void Main(string[] args) {
 
             //  DEFINING SOME DATA
-            int currentTemperature = 167;
-            double celsTemp = 75;
             int fahrTemp = 167;
+            double celsTemp = 75;
             bool endLoop = false;
 
             const int minTempF = 163;
@@ -24,7 +23,7 @@ namespace Programmering1_Sauna {
             Console.WriteLine("=== SAUNA ===");
             do {
                 do {
-                    Console.Write("Choose a temperature between {0} and {1}: ", minTempF, maxTempF);
+                    Console.Write("Choose a temperature between {0} and {1} fahrenheit: ", minTempF, maxTempF);
                     try {
                         fahrTemp = Convert.ToInt32(Console.ReadLine());
                         endLoop = true; /* To end the do-while loop when after the user 
@@ -49,8 +48,7 @@ namespace Programmering1_Sauna {
                     Console.WriteLine("That is too warm");
                 }
                 else {
-                    currentTemperature = fahrTemp;
-                    Console.WriteLine("The current temperature is now {0} fahrenheit", currentTemperature);
+                    Console.WriteLine("The current temperature is now {0} fahrenheit", fahrTemp);
                 }
 
             } while(celsTemp < minTempC || celsTemp > maxTempC);
