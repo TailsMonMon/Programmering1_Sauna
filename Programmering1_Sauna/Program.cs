@@ -7,18 +7,19 @@ using System.Threading.Tasks;
 namespace Programmering1_Sauna {
     class Program {
 
-        //  DEFINING SOME DATA
+        /**** DEFINING SOME DATA ****\
+        | This data can be used in   |
+        | all methods in this class  |
+        \****************************/
         const int minTempF = 163;
         const int maxTempF = 170;
 
         static double maxTempC = FahrToCels(maxTempF);
         static double minTempC = FahrToCels(minTempF);
-        // This data can be used in all methods.
 
-
+        
         static void Main(string[] args) {
-
-            //  DEFINING SOME MORE DATA
+            //  DEFINING SOME DATA
             int fahrTemp = 167;
             double celsTemp = 75;
             bool endLoop = false;
@@ -57,7 +58,7 @@ namespace Programmering1_Sauna {
                     }
                 }
                 else {
-                    FahrToCels();
+                    celsTemp = FahrToCels();
                 }
             } while(celsTemp < minTempC || celsTemp > maxTempC);
             Console.WriteLine("Thank you for this time");
@@ -75,17 +76,18 @@ namespace Programmering1_Sauna {
             return celsius;
         }
 
+
         /************* FahrToCels *************\
         |  A method that choosed a random      |
         |  temperature between min and max     |
         \**************************************/
-        static void FahrToCels() {
+        static double FahrToCels() {
             Random rnd = new Random();
             int rndTempF = rnd.Next(minTempF, maxTempF);
             Console.WriteLine("The current temperature is now {0} fahrenheit", rndTempF);
             double celsius = (rndTempF - 32) / 1.8;
             //Console.WriteLine("Control: {0:f1} Celsius", celsius);
-            return;
+            return celsius;
         }
     }
 }
